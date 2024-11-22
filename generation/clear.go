@@ -13,5 +13,6 @@ func clearBuildDir() error {
 			return err
 		}
 	}
-	return nil
+	err = os.Mkdir(BUILD_DIR+"/posts", os.ModePerm)
+	return err
 }

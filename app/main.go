@@ -1,21 +1,22 @@
 package main
 
 import (
-	"log"
 	"site/generation"
+
+	"github.com/sophed/lg"
 )
 
 func main() {
 	init := generation.InitDir(generation.POSTS_DIR)
 	if init {
-		println("add markdown files to ./posts/ to get started!")
+		lg.Info("add markdown files to ./posts/ to get started!")
 		return
 	}
 
-	println("generating posts...")
+	lg.Info("generating posts...")
 	err := generation.GeneratePosts()
 	if err != nil {
-		log.Fatal(err)
+		lg.Fatl(err)
 	}
-	println("generated posts!")
+	lg.Info("generated posts!")
 }
