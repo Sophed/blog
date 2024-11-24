@@ -1,0 +1,15 @@
+body {
+    font-family: "Iosevka Web", monospace;
+    background-color: #282828;
+    color: #d4be98;
+    margin: 3em 14%;
+}
+
+#content {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    color: #a9b665;
+}

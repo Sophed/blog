@@ -21,6 +21,10 @@ func GeneratePosts() error {
 	if err != nil {
 		return err
 	}
+	styles, err := os.ReadFile(TEMPLATES_DIR + "/global.css")
+	if err != nil {
+		return err
+	}
 	entries, err := os.ReadDir(POSTS_DIR)
 	if err != nil {
 		return err
@@ -34,6 +38,7 @@ func GeneratePosts() error {
 		}
 		content := strings.ReplaceAll(string(template), "{{content}}", convertMDtoHTML(data))
 		content = strings.ReplaceAll(content, "{{title}}", title)
+		content = strings.ReplaceAll(content, "{{css}}", string(styles))
 		err = os.WriteFile(BUILD_DIR+"/posts/"+title+".html", []byte(content), 0644)
 	}
 	return nil
