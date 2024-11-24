@@ -7,35 +7,91 @@
         />
         <title>an example post</title>
         <style>
-            body {
-    font-family: "Iosevka Web", monospace;
-    background-color: #282828;
-    color: #d4be98;
-    margin: 3em 14%;
+            :root {
+    --bg: #282828;
+    --bg2: #323232;
+    --fg: #d4be98;
+    --accent: #a9b665;
 }
 
-#content {
+body {
+    font-family: "Iosevka Web", monospace;
+    background-color: var(--bg);
+    color: var(--fg);
+    margin: 6em 2em;
+}
+
+.wrapper {
+    max-width: 80ch;
     margin-left: auto;
     margin-right: auto;
 }
 
 a {
-    color: #a9b665;
+    color: var(--accent);
+}
+h1 {
+    font-size: 36px;
+}
+img {
+    max-width: 100%;
+}
+hr {
+    margin: 2em 0;
+    border: 1px solid var(--bg2);
 }
 
         </style>
     </head>
     <body>
-        <h1>an example post</h1>
-        <div id="content"><h2 id="h2-heading">h2 Heading</h2>
+        <div class="wrapper">
+            <div><style>
+    .titles {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .titles h2 {
+        display: block;
+    }
+    .nav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+    .left {
+        margin-right: 1em;
+        float: left;
+        text-align: left;
+    }
+    .right {
+        margin-left: 1em;
+        float: right;
+        text-align: right;
+    }
+    .nav a {
+        display: block;
+        text-decoration: none;
+    }
+</style>
+<div class="titles">
+    <h2 style="float: left">soph.systems</h2>
+    <h2 style="float: right">ᓚᘏᗢ</h2>
+</div>
+<ul class="nav">
+    <li class="left"><a href="#home">home</a></li>
+    <li class="left"><a href="#resume">resume</a></li>
+    <li class="left"><a href="#socials">socials</a></li>
+    <li class="right"><a href="#blog">blog</a></li>
+</ul>
+<hr />
+</div>
+            <div id="content"><h1 id="an-example-post">an example post</h1>
+
+<h2 id="h2-heading">h2 Heading</h2>
 
 <h3 id="h3-heading">h3 Heading</h3>
-
-<h4 id="h4-heading">h4 Heading</h4>
-
-<h5 id="h5-heading">h5 Heading</h5>
-
-<h6 id="h6-heading">h6 Heading</h6>
 
 <h2 id="typographic-replacements">Typographic replacements</h2>
 
@@ -215,5 +271,6 @@ console.log(foo(5));
 
 <p>With a reference later in the document defining the URL location:</p>
 </div>
+        </div>
     </body>
 </html>
