@@ -6,7 +6,7 @@ import (
 	"github.com/gomarkdown/markdown/parser"
 )
 
-func convertMDtoHTML(md []byte) []byte {
+func convertMDtoHTML(md []byte) string {
 	extensions := parser.CommonExtensions | parser.AutoHeadingIDs | parser.NoEmptyLineBeforeBlock
 	p := parser.NewWithExtensions(extensions)
 	doc := p.Parse(md)
@@ -15,5 +15,5 @@ func convertMDtoHTML(md []byte) []byte {
 	opts := html.RendererOptions{Flags: htmlFlags}
 	renderer := html.NewRenderer(opts)
 
-	return markdown.Render(doc, renderer)
+	return string(markdown.Render(doc, renderer))
 }

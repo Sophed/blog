@@ -9,10 +9,15 @@ import (
 
 const POSTS_DIR = "posts"
 const BUILD_DIR = "build"
+const TEMPLATES_DIR = "templates"
 
 func GeneratePosts() error {
 	InitDir(BUILD_DIR)
 	err := clearBuildDir()
+	if err != nil {
+		return err
+	}
+	template, err := os.ReadFile(TEMPLATES_DIR + "/post.html")
 	if err != nil {
 		return err
 	}
@@ -21,14 +26,15 @@ func GeneratePosts() error {
 		return err
 	}
 	for _, entry := range entries {
-		println("-", entry.Name())
+		title := strings.Split(entry.Name(), ".")[0]
+		println("-", title)
 		data, err := os.ReadFile(POSTS_DIR + "/" + entry.Name())
 		if err != nil {
 			return err
 		}
-		content := convertMDtoHTML(data)
-		title := strings.Split(entry.Name(), ".")[0]
-		err = os.WriteFile(BUILD_DIR+"/posts/"+title+".html", content, 0644)
+		content := strings.ReplaceAll(string(template), "{{content}}", convertMDtoHTML(data))
+		content = strings.ReplaceAll(content, "{{title}}", title)
+		err = os.WriteFile(BUILD_DIR+"/posts/"+title+".html", []byte(content), 0644)
 	}
 	return nil
 }
