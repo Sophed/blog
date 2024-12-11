@@ -1,6 +1,6 @@
-github.com/gomarkdown/markdown v0.0.0-20241105142532-d03b89096d81 h1:5lyLWsV+qCkoYqsKUDuycESh9DEIPVKN6iCFeL7ag50=
-github.com/gomarkdown/markdown v0.0.0-20241105142532-d03b89096d81/go.mod h1:JDGcbDT52eL4fju3sZ4TeHGsQwhG9nbDV21aMyhwPoA=
-github.com/sophed/lg v0.0.0-20241122225133-947f59cc9cf3 h1:GCK/VTbFuN0Rp9x/7S+W7qDHxVg/sumdRj+jysKAY0M=
-github.com/sophed/lg v0.0.0-20241122225133-947f59cc9cf3/go.mod h1:Qg1tZUEex1YzGo9LQIYhAHVscQ80ANB98zAyMfVV1/U=
+github.com/gomarkdown/markdown v0.0.0-20241205020045-f7e15b2f3e62 h1:pbAFUZisjG4s6sxvRJvf2N7vhpCvx2Oxb3PmS6pDO1g=
+github.com/gomarkdown/markdown v0.0.0-20241205020045-f7e15b2f3e62/go.mod h1:JDGcbDT52eL4fju3sZ4TeHGsQwhG9nbDV21aMyhwPoA=
 github.com/sophed/lg v0.0.0-20241122232903-0da07f991552 h1:AmO+F5FEZ4l8qX0WDDrdboqVbWbcNv+YVsCYVXUn2iA=
 github.com/sophed/lg v0.0.0-20241122232903-0da07f991552/go.mod h1:Qg1tZUEex1YzGo9LQIYhAHVscQ80ANB98zAyMfVV1/U=
+maragu.dev/gomponents v1.0.0 h1:eeLScjq4PqP1l+r5z/GC+xXZhLHXa6RWUWGW7gSfLh4=
+maragu.dev/gomponents v1.0.0/go.mod h1:oEDahza2gZoXDoDHhw8jBNgH+3UR5ni7Ur648HORydM=

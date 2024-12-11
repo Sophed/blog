@@ -1,0 +1,28 @@
+.titles {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.titles h2 {
+    display: block;
+}
+.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.left {
+    margin-right: 1em;
+    float: left;
+    text-align: left;
+}
+.right {
+    margin-left: 1em;
+    float: right;
+    text-align: right;
+}
+.nav a {
+    display: block;
+    text-decoration: none;
+}

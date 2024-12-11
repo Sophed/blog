@@ -1,31 +1,22 @@
 package generation
 
 import (
+	"bytes"
 	"os"
+	"site/app/views"
 	"strings"
-
-	"github.com/sophed/lg"
 )
 
 const POSTS_DIR = "posts"
 const BUILD_DIR = "build"
-const TEMPLATES_DIR = "templates"
+const STYLE_DIR = "styles"
 
 func GeneratePosts() error {
-	InitDir(BUILD_DIR)
 	err := clearBuildDir()
 	if err != nil {
 		return err
 	}
-	template, err := os.ReadFile(TEMPLATES_DIR + "/page.html")
-	if err != nil {
-		return err
-	}
-	nav, err := os.ReadFile(TEMPLATES_DIR + "/nav.html")
-	if err != nil {
-		return err
-	}
-	styles, err := os.ReadFile(TEMPLATES_DIR + "/global.css")
+	err = copyCSS()
 	if err != nil {
 		return err
 	}
@@ -40,26 +31,33 @@ func GeneratePosts() error {
 		if err != nil {
 			return err
 		}
-		content := strings.ReplaceAll(string(template), "{{content}}", convertMDtoHTML(data, title))
-		content = strings.ReplaceAll(content, "{{title}}", title)
-		content = strings.ReplaceAll(content, "{{css}}", string(styles))
-		content = strings.ReplaceAll(content, "{{nav}}", string(nav))
+		html := convertMDtoHTML(data, title)
+		post := new(bytes.Buffer)
+		views.Post(title, html).Render(post)
+		content := post.String()
 		err = os.WriteFile(BUILD_DIR+"/posts/"+title+".html", []byte(content), 0644)
+		if err != nil {
+			return err
+		}
+		views.BLOG_POSTS = append(views.BLOG_POSTS, title)
 	}
 	return nil
 }
 
-func InitDir(name string) bool {
-	s, err := os.Stat(name)
-	if os.IsNotExist(err) {
-		err = os.Mkdir(name, os.ModePerm)
+func copyCSS() error {
+	entries, err := os.ReadDir(STYLE_DIR)
+	if err != nil {
+		return err
+	}
+	for _, entry := range entries {
+		data, err := os.ReadFile(STYLE_DIR + "/" + entry.Name())
 		if err != nil {
-			lg.Fatl(err)
+			return err
 		}
-		return true
+		err = os.WriteFile(BUILD_DIR+"/css/"+entry.Name(), data, 0644)
+		if err != nil {
+			return err
+		}
 	}
-	if !s.IsDir() {
-		lg.Fatl("a file already exists with expected name of" + name + "dir")
-	}
-	return false
+	return nil
 }
