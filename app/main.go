@@ -16,8 +16,7 @@ func main() {
 	lg.Info("generating static pages...")
 	generation.Static(views.Index(), "index")
 	generation.Static(views.Resume(), "resume")
-	generation.Static(views.Socials(), "socials")
 	generation.Static(views.Photography(), "photography")
-	generation.Static(views.Blog(), "blog")
+	generation.Static(views.Blog(), "posts")
 	lg.Info("done!")
 }

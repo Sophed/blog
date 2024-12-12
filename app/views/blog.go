@@ -10,7 +10,7 @@ import (
 var BLOG_POSTS []string
 
 func Blog() Node {
-	return components.View("soph.systems ~ blog",
+	return components.View("soph.systems ~ posts",
 		Map(BLOG_POSTS, func(title string) Node {
 			return blogLink(title)
 		}),
