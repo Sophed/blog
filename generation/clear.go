@@ -15,5 +15,6 @@ func clearBuildDir() error {
 	}
 	err = os.Mkdir(BUILD_DIR+"/posts", os.ModePerm)
 	err = os.Mkdir(BUILD_DIR+"/css", os.ModePerm)
+	err = os.Mkdir(BUILD_DIR+"/static", os.ModePerm)
 	return err
 }

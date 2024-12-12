@@ -9,14 +9,16 @@ import (
 
 const POSTS_DIR = "posts"
 const BUILD_DIR = "build"
-const STYLE_DIR = "styles"
+const STYLES_DIR = "styles"
+const STATIC_DIR = "static"
 
 func GeneratePosts() error {
 	err := clearBuildDir()
 	if err != nil {
 		return err
 	}
-	err = copyCSS()
+	err = copyStatics(STYLES_DIR, "css")
+	err = copyStatics(STATIC_DIR, "static")
 	if err != nil {
 		return err
 	}
@@ -44,17 +46,17 @@ func GeneratePosts() error {
 	return nil
 }
 
-func copyCSS() error {
-	entries, err := os.ReadDir(STYLE_DIR)
+func copyStatics(target, destination string) error {
+	entries, err := os.ReadDir(target)
 	if err != nil {
 		return err
 	}
 	for _, entry := range entries {
-		data, err := os.ReadFile(STYLE_DIR + "/" + entry.Name())
+		data, err := os.ReadFile(target + "/" + entry.Name())
 		if err != nil {
 			return err
 		}
-		err = os.WriteFile(BUILD_DIR+"/css/"+entry.Name(), data, 0644)
+		err = os.WriteFile(BUILD_DIR+"/"+destination+"/"+entry.Name(), data, 0644)
 		if err != nil {
 			return err
 		}

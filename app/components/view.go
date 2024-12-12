@@ -11,6 +11,7 @@ func View(title string, elements ...Node) Node {
 		Title:    title,
 		Language: "en",
 		Head: []Node{
+			Link(Rel("icon"), Type("image/x-icon"), Href("/static/favicon.png")),
 			Link(Rel("stylesheet"), Href("https://sophed.github.io/iosevka-webfont/3.4.1/iosevka.css")),
 			Link(Rel("stylesheet"), Href("/css/global.css")),
 			Link(Rel("stylesheet"), Href("/css/nav.css")),
