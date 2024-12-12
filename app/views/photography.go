@@ -8,7 +8,7 @@ import (
 )
 
 func Photography() Node {
-	return components.View("soph.systems ~ photography",
+	return components.View(false, "soph.systems ~ photography",
 		P(Text("photography!!")),
 	)
 }

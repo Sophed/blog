@@ -8,7 +8,7 @@ import (
 )
 
 func Resume() Node {
-	return components.View("soph.systems ~ resume",
+	return components.View(false, "soph.systems ~ resume",
 		H2(Text("Experience")),
 		P(Text("Most of my experience is in development with Go and Java, alongside online community management. I've worked with a wide range of modern technologies, chosen carefully for the best performance and developer experience.")),
 		H2(Text("Stray.gg - Administrator & Back-End Developer (July 2022 - August 2024)")),

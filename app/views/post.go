@@ -7,5 +7,5 @@ import (
 )
 
 func Post(title, content string) Node {
-	return components.View(title, Raw(content))
+	return components.View(false, title, Raw(content))
 }

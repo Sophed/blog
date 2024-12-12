@@ -8,10 +8,11 @@ import (
 )
 
 func Index() Node {
-	return components.View("soph.systems",
+	return components.View(true, "soph.systems",
+		Script(Src("/static/status.js")),
 		H2(Text("Software Engineer, Designer, & Linux Evangelist")),
-		P(Text("Status: ~")),
-		P(Text("Hey! I'm Sophia (she/her), A student software engineer from the UK learning systems and back-end development.")),
+		P(Text("Status: Loading..."), ID("status")),
+		P(Strong(Text("Hey! ")), Text("I'm Sophia (she/her), A student software engineer from the UK learning systems and back-end development.")),
 		P(
 			A(Text("GitHub"), Href("https://github.com/sophed"), Target("_blank")),
 			Text(" - "),
@@ -37,7 +38,7 @@ func Index() Node {
 				"Automatically claim Oracle Cloud free-tier instances",
 			),
 		),
-		P(Text("The best way to contact me is via my discord - @sophed")),
+		P(Text("The best way to contact me is via my discord - "), Strong(Text("@sophed"))),
 	)
 }
 
