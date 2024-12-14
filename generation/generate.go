@@ -27,21 +27,24 @@ func GeneratePosts() error {
 		return err
 	}
 	for _, entry := range entries {
-		title := strings.Split(entry.Name(), ".")[0]
-		println("-", title)
+		id := strings.Split(entry.Name(), ".")[0]
+		println("-", id)
 		data, err := os.ReadFile(POSTS_DIR + "/" + entry.Name())
 		if err != nil {
 			return err
 		}
-		html := convertMDtoHTML(data, title)
-		post := new(bytes.Buffer)
-		views.Post(title, html).Render(post)
-		content := post.String()
-		err = os.WriteFile(BUILD_DIR+"/posts/"+title+".html", []byte(content), 0644)
+		post, err := getMeta(data)
 		if err != nil {
 			return err
 		}
-		views.BLOG_POSTS = append(views.BLOG_POSTS, title)
+		post.ID = id
+		page := new(bytes.Buffer)
+		views.Post(post, convertMDtoHTML(post.Body)).Render(page)
+		err = os.WriteFile(BUILD_DIR+"/posts/"+post.ID+".html", []byte(page.String()), 0644)
+		if err != nil {
+			return err
+		}
+		views.BLOG_POSTS = append(views.BLOG_POSTS, post)
 	}
 	return nil
 }

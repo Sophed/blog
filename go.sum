@@ -1,5 +1,7 @@
 github.com/gomarkdown/markdown v0.0.0-20241205020045-f7e15b2f3e62 h1:pbAFUZisjG4s6sxvRJvf2N7vhpCvx2Oxb3PmS6pDO1g=
 github.com/gomarkdown/markdown v0.0.0-20241205020045-f7e15b2f3e62/go.mod h1:JDGcbDT52eL4fju3sZ4TeHGsQwhG9nbDV21aMyhwPoA=
+github.com/sblinch/kdl-go v0.0.0-20240410000746-21754ba9ac55 h1:scyq0E9FvdGLX5lxAwjK0HebTM3Y7dG3tYrlXP+x+tk=
+github.com/sblinch/kdl-go v0.0.0-20240410000746-21754ba9ac55/go.mod h1:b3oNGuAKOQzhsCKmuLc/urEOPzgHj6fB8vl8bwTBh28=
 github.com/sophed/lg v0.0.0-20241122232903-0da07f991552 h1:AmO+F5FEZ4l8qX0WDDrdboqVbWbcNv+YVsCYVXUn2iA=
 github.com/sophed/lg v0.0.0-20241122232903-0da07f991552/go.mod h1:Qg1tZUEex1YzGo9LQIYhAHVscQ80ANB98zAyMfVV1/U=
 maragu.dev/gomponents v1.0.0 h1:eeLScjq4PqP1l+r5z/GC+xXZhLHXa6RWUWGW7gSfLh4=
