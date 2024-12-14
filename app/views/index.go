@@ -20,7 +20,7 @@ func Index() Node {
 			Text(" - "),
 			A(Text("Bluesky"), Href("https://bsky.app/profile/soph.cat"), Target("_blank")),
 		),
-		H2(Text("Projects")),
+		P(Text("Some of my projects:")),
 		Ul(
 			project(
 				"dotfiles",
