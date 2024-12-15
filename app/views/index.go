@@ -20,7 +20,7 @@ func Index() Node {
 			Text(" - "),
 			A(Text("Bluesky"), Href("https://bsky.app/profile/soph.cat"), Target("_blank")),
 		),
-		P(Text("Some of my projects:")),
+		H2(Text("Projects")),
 		Ul(
 			project(
 				"dotfiles",
@@ -39,6 +39,9 @@ func Index() Node {
 			),
 		),
 		P(Text("The best way to contact me is via my discord - "), Strong(Text("@sophed"))),
+		H2(Text("Chatbox")),
+		components.ChatBox(6),
+		P(Text("Other online users will see your messages! Please don't make me write moderation tools!")),
 	)
 }
 

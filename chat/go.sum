@@ -1,0 +1,6 @@
+github.com/gorilla/websocket v1.5.0 h1:PPwGk2jz7EePpoHN/+ClbZu8SPxiqlu12wZP/3sWmnc=
+github.com/gorilla/websocket v1.5.0/go.mod h1:YR8l580nyteQvAITg2hZ9XVh4b55+EU/adAjf1fMHhE=
+github.com/olahol/melody v1.2.1 h1:xdwRkzHxf+B0w4TKbGpUSSkV516ZucQZJIWLztOWICQ=
+github.com/olahol/melody v1.2.1/go.mod h1:GgkTl6Y7yWj/HtfD48Q5vLKPVoZOH+Qqgfa7CvJgJM4=
+github.com/sophed/lg v0.0.0-20241122232903-0da07f991552 h1:AmO+F5FEZ4l8qX0WDDrdboqVbWbcNv+YVsCYVXUn2iA=
+github.com/sophed/lg v0.0.0-20241122232903-0da07f991552/go.mod h1:Qg1tZUEex1YzGo9LQIYhAHVscQ80ANB98zAyMfVV1/U=

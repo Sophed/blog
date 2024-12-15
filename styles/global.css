@@ -1,4 +1,5 @@
 :root {
+    --bg0: #1d2021;
     --bg: #282828;
     --bg2: #323232;
     --fg: #d4be98;
@@ -30,4 +31,32 @@ img {
 hr {
     margin: 2em 0;
     border: 1px solid var(--bg2);
+}
+
+.chatbox {
+    background-color: var(--bg0);
+}
+.chatbox ul {
+    padding: 1em;
+    margin: 0;
+    list-style-type: none;
+}
+.chatbox ul li {
+    line-height: 1.4em;
+}
+#msg-input {
+    font-family: "Iosevka Web", monospace;
+    font-size: 15px;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box; /* Firefox, other Gecko */
+    box-sizing: border-box; /* Opera/IE 8+ */
+    border: none;
+    width: 100%;
+    margin-top: 0;
+    padding: 0.8em 1em;
+    background-color: var(--bg2);
+    color: var(--fg);
+}
+#msg-input:focus {
+    outline: none;
 }
