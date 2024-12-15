@@ -39,9 +39,8 @@ func Index() Node {
 			),
 		),
 		P(Text("The best way to contact me is via my discord - "), Strong(Text("@sophed"))),
-		H2(Text("Chatbox")),
-		components.ChatBox(6),
-		P(Text("Other online users will see your messages! Please don't make me write moderation tools!")),
+		H2(Text("Recent blog post")),
+		LatestPost(),
 	)
 }
 

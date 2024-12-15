@@ -5,6 +5,7 @@ import (
 	"os"
 	"site/app/views"
 	"strings"
+	"time"
 )
 
 const POSTS_DIR = "posts"
@@ -38,13 +39,17 @@ func GeneratePosts() error {
 			return err
 		}
 		post.ID = id
+		post.Date, err = time.Parse("2006-01-02", post.DateStr)
+		if err != nil {
+			return err
+		}
 		page := new(bytes.Buffer)
 		views.Post(post, convertMDtoHTML(post.Body)).Render(page)
 		err = os.WriteFile(BUILD_DIR+"/posts/"+post.ID+".html", []byte(page.String()), 0644)
 		if err != nil {
 			return err
 		}
-		views.BLOG_POSTS = append(views.BLOG_POSTS, post)
+		views.AddPost(post)
 	}
 	return nil
 }

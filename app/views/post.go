@@ -13,7 +13,7 @@ import (
 func Post(post *BlogPost, body string) Node {
 	return components.View(false, post.Title,
 		P(Text(
-			"Published: "+post.Date+
+			"Published: "+post.DateStr+
 				" ~ "+strconv.Itoa(readingTime(string(post.Body)))+"m read",
 		)),
 		H2(Text(post.Title)),
