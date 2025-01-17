@@ -12,6 +12,7 @@ import (
 
 func Post(post *BlogPost, body string) Node {
 	return components.View(false, post.Title,
+		A(Href("/posts"), Text("<- back to posts"), Style("text-decoration: none")),
 		P(Text(
 			"Published: "+post.DateStr+
 				" ~ "+strconv.Itoa(readingTime(string(post.Body)))+"m read",

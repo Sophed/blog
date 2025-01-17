@@ -38,7 +38,7 @@ func LatestPost() Node {
 
 func Blog() Node {
 	return components.View(false, "soph.systems ~ posts",
-		H2(Text("Latest - Oldest")),
+		H2(Text("Blog Posts [latest -> oldest]")),
 		postList(),
 	)
 }
